@@ -5,104 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[Your Name] Portfolio</title>
   <style>
-    /* Reset + Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Reset + Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0a0e2a;
-      color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+      background: #070F2B;
+      color: #EAEAEA;
       line-height: 1.6;
     }
+    a { text-decoration: none; }
 
     /* Navbar */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(10, 14, 42, 0.95);
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(7,15,43,0.95);
       backdrop-filter: blur(6px);
-      display: flex;
-      justify-content: flex-end;
-      gap: 25px;
+      display: flex; justify-content: flex-end; gap: 25px;
       padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       z-index: 1000;
     }
     nav a {
-      text-decoration: none;
-      color: #ccc;
-      font-weight: 500;
+      color: #9290C3; font-weight: 500;
       transition: color 0.3s, border-bottom 0.3s;
     }
-    nav a:hover {
-      color: #4db8ff;
-    }
-    nav a.active {
-      color: #4db8ff;
-      border-bottom: 2px solid #4db8ff;
-    }
+    nav a:hover { color: #535C91; }
+    nav a.active { color: #EAEAEA; border-bottom: 2px solid #9290C3; }
 
     /* Hero Section */
     #home {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #0a0e2a, #1b1f4a);
-      text-align: center;
-      padding: 0 20px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      background: linear-gradient(135deg, #070F2B, #1B1A55);
+      text-align: center; padding: 0 20px;
     }
-    #home h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    #home img {
+      width: 150px; height: 150px;
+      border-radius: 50%; margin-bottom: 20px;
+      border: 3px solid #9290C3;
     }
-    #home p {
-      font-size: 1.2rem;
-      color: #ccc;
+    #home h1 { font-size: 3rem; margin-bottom: 10px; color: #9290C3; }
+    #home p { font-size: 1.2rem; color: #ccc; margin-bottom: 20px; }
+    #home .btn {
+      padding: 10px 20px;
+      background: #535C91; color: white;
+      border-radius: 6px; font-weight: bold;
+      transition: background 0.3s;
     }
+    #home .btn:hover { background: #1B1A55; }
 
     /* Sections */
     section {
-      min-height: 100vh;
       padding: 100px 20px 60px;
+      opacity: 0; transform: translateY(40px);
+      transition: all 0.8s ease;
     }
+    section.visible { opacity: 1; transform: translateY(0); }
     section h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      color: #4db8ff;
-    }
-    section p {
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
+      text-align: center; margin-bottom: 40px;
+      font-size: 2.5rem; color: #9290C3;
     }
 
-    /* About Me */
+    /* About Section */
     #about {
-      background: #12163d;
+      background: #1B1A55;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 40px;
     }
+    #about img {
+      width: 250px; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    #about .text { max-width: 600px; color: #EAEAEA; }
 
-    /* Projects Grid */
-    #projects {
-      background: #0f1333;
-    }
+    /* Projects */
+    #projects { background: #070F2B; }
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
+      gap: 25px; margin-top: 20px;
     }
     .project-card {
-      background: #1b1f4a;
-      padding: 20px;
-      border-radius: 12px;
+      background: #1B1A55;
+      padding: 20px; border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -110,48 +95,33 @@
       transform: translateY(-8px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
-    .project-card h3 {
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .project-card p {
-      color: #ccc;
-      font-size: 0.95rem;
-    }
+    .project-card h3 { margin-bottom: 10px; color: #9290C3; }
+    .project-card p { color: #ccc; font-size: 0.95rem; }
 
     /* Contact */
-    #contact {
-      background: #12163d;
-    }
+    #contact { background: #1B1A55; text-align: center; }
     form {
-      max-width: 500px;
-      margin: 30px auto 0;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      max-width: 500px; margin: 30px auto 0;
+      display: flex; flex-direction: column; gap: 15px;
     }
     input, textarea, button {
-      padding: 12px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
+      padding: 12px; font-size: 1rem;
+      border: none; border-radius: 8px;
     }
     input, textarea {
-      background: #1b1f4a;
-      color: #fff;
+      background: #070F2B; color: #fff;
     }
-    input::placeholder, textarea::placeholder {
-      color: #aaa;
-    }
+    input::placeholder, textarea::placeholder { color: #9290C3; }
     button {
-      background: #4db8ff;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
+      background: #535C91; color: white; font-weight: bold;
+      cursor: pointer; transition: background 0.3s;
     }
-    button:hover {
-      background: #1a8cd8;
+    button:hover { background: #9290C3; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 20px;
+      background: #070F2B; color: #9290C3; font-size: 0.9rem;
     }
   </style>
 </head>
@@ -165,15 +135,24 @@
   </nav>
 
   <!-- Hero -->
-  <section id="home">
-    <h1>[Your Name] Portfolio</h1>
-    <p>Welcome to my portfolio website</p>
+  <section id="home" class="visible">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture">
+    <h1>[Your Name]</h1>
+    <p>Web Developer • Designer • Creator</p>
+    <a href="#projects" class="btn">View My Work</a>
   </section>
 
   <!-- About Me -->
   <section id="about">
-    <h1>About Me</h1>
-    <p>I’m a passionate developer/designer with a love for creating beautiful, functional, and user-friendly digital experiences. I enjoy solving problems and building projects that make an impact.</p>
+    <img src="https://via.placeholder.com/250" alt="About Image">
+    <div class="text">
+      <h1>About Me</h1>
+      <p>
+        Hi, I’m [Your Name]! I specialize in building modern, user-friendly websites
+        and applications. I love combining design with functionality to create
+        engaging digital experiences. When I’m not coding, I enjoy [your hobbies].
+      </p>
+    </div>
   </section>
 
   <!-- Projects -->
@@ -182,19 +161,19 @@
     <div class="projects">
       <div class="project-card">
         <h3>Project One</h3>
-        <p>A short description about this project. Mention tools and the purpose.</p>
+        <p>A responsive portfolio site built with HTML, CSS, and JavaScript.</p>
       </div>
       <div class="project-card">
         <h3>Project Two</h3>
-        <p>A short description about this project. Mention tools and the purpose.</p>
+        <p>An interactive web app for managing tasks and boosting productivity.</p>
       </div>
       <div class="project-card">
         <h3>Project Three</h3>
-        <p>A short description about this project. Mention tools and the purpose.</p>
+        <p>A creative landing page with animations and smooth scroll effects.</p>
       </div>
       <div class="project-card">
         <h3>Project Four</h3>
-        <p>A short description about this project. Mention tools and the purpose.</p>
+        <p>A data visualization dashboard with charts and real-time updates.</p>
       </div>
     </div>
   </section>
@@ -211,18 +190,22 @@
     </form>
   </section>
 
-  <!-- Active Link Scroll -->
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 [Your Name]. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS for nav + fade-in -->
   <script>
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
 
+    // Highlight active nav link
     window.addEventListener("scroll", () => {
       let current = "";
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 120;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
+        if (scrollY >= sectionTop) current = section.id;
       });
       navLinks.forEach(link => {
         link.classList.remove("active");
@@ -230,6 +213,19 @@
           link.classList.add("active");
         }
       });
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
     });
   </script>
 </body>

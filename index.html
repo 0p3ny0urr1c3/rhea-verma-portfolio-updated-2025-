@@ -30,15 +30,12 @@
     section { padding: calc(var(--nav-h) + 40px) 20px 60px; min-height: 70vh; opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; scroll-margin-top: calc(var(--nav-h) + 20px); }
     section.visible { opacity: 1; transform: translateY(0); }
     #home { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 100vh; background: linear-gradient(135deg, var(--bg-1), var(--bg-2)); padding-top: calc(var(--nav-h) + 20px); }
-    .hero-avatar { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--accent); background-color: rgba(255,255,255,0.06); display: block; margin-bottom: 20px; object-fit: cover; }
     #home h1 { font-size: 3rem; color: var(--accent); margin-bottom: 8px; }
     #home p { color: #dcdde6; margin-bottom: 18px; font-size: 1.05rem; max-width: 760px; }
     .btn { display: inline-block; background: var(--mid); color: #fff; padding: 10px 18px; border-radius: 8px; font-weight: 700; transition: background .22s, transform .12s; }
     .btn:hover { background: var(--bg-2); transform: translateY(-3px); }
     #about { background: var(--bg-2); display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
-    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 320px 1fr; gap: 36px; align-items: center; }
-    .about-img { width: 320px; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.5); }
-    .about-img img { width: 100%; height: auto; display: block; }
+    .about-inner { max-width: 900px; margin: 0 auto; text-align: center; }
     .about-text p { color: #e7e7ee; line-height: 1.7; }
     #projects { background: var(--bg-1); }
     .projects { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
@@ -56,7 +53,6 @@
     button[type="submit"] { background: var(--mid); color: #fff; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; border: none; margin-top: 6px; }
     button[type="submit"]:hover { background: var(--accent); color: var(--bg-1); }
     footer { text-align: center; padding: 20px; color: var(--accent); background: transparent; }
-    @media (max-width: 900px){ .about-inner { grid-template-columns: 1fr; text-align: center; } nav { justify-content: center; } nav a { font-size: .9rem; } }
   </style>
 </head>
 <body>
@@ -67,57 +63,45 @@
     <a href="#contact">Contact</a>
   </nav>
   <section id="home" class="visible">
-    <img class="hero-avatar" src="rhea.png" alt="Avatar">
     <h1>Rhea Verma</h1>
-    <p>Web Developer • Designer • Creator — I build clean, useful interfaces and thoughtful interactions.</p>
+    <p>Data Analytics & Information Systems — Senior at UC Riverside (Class of 2026), passionate about using data to drive insights and decisions.</p>
     <a class="btn" href="#projects">View My Work</a>
   </section>
   <section id="about">
     <div class="about-inner">
-      <div class="about-img"><img src="https://via.placeholder.com/640x480.png?text=About+Image" alt="About image"></div>
       <div class="about-text">
         <h2 style="color:var(--accent); margin-bottom:12px;">About Me</h2>
-        <p>Hi — I’m Rhea Verma. I specialize in building modern, accessible websites and polished UI. I love turning ideas into real, usable products. My stack usually includes HTML, CSS, JavaScript, and occasionally React for interactive work.</p>
-        <p style="margin-top:12px; color:#d7d7e0;"><strong>Skills:</strong> HTML • CSS • JavaScript • Responsive Design • Accessibility • UI Design</p>
+        <p>I am a senior at UC Riverside pursuing a B.S. in Statistics with a minor in Information Systems, graduating in 2026. I specialize in data analytics and building insights that can support decision-making across industries.</p>
+        <p style="margin-top:12px;">I am proficient in <strong>R</strong> and <strong>Excel</strong>, with working knowledge of <strong>Python</strong> and <strong>SQL</strong>. I am currently pursuing a <strong>Power BI certification</strong> and I’m comfortable using GitHub for version control and collaboration.</p>
+        <p style="margin-top:12px;">Beyond academics, I have contributed to student hackathons (Citrus & Cutie Hack), where I gained experience in teamwork, sponsor relations, and operations — skills that complement my technical analytics background.</p>
       </div>
     </div>
   </section>
   <section id="projects">
     <h2 style="color:var(--accent); text-align:center;">Projects</h2>
     <div class="projects">
+      <!-- Project 1 Placeholder -->
       <article class="project-card">
         <div class="thumb">Image/Preview</div>
         <h3>Project One</h3>
-        <p>Short description describing what it does, tech used, and the goal.</p>
-      </article>
-      <article class="project-card">
-        <div class="thumb">Image/Preview</div>
-        <h3>Project Two</h3>
-        <p>Short description describing what it does, tech used, and the goal.</p>
-      </article>
-      <article class="project-card">
-        <div class="thumb">Image/Preview</div>
-        <h3>Project Three</h3>
-        <p>Short description describing what it does, tech used, and the goal.</p>
-      </article>
-      <article class="project-card">
-        <div class="thumb">Image/Preview</div>
-        <h3>Project Four</h3>
-        <p>Short description describing what it does, tech used, and the goal.</p>
+        <p>Placeholder for future project.</p>
       </article>
       <!-- STAT 167 Project -->
       <article class="project-card">
         <div class="thumb">📊</div>
-        <h3>STAT 167 Project — Flight Analysis</h3>
-        <p>
-          A statistical analysis project exploring flight punctuality, efficiency, weather effects, 
-          and airline performance. Includes R Markdown source, full report, and presentation slides.
-        </p>
+        <h3>STAT 167 Project — NYC Flight Analysis</h3>
+        <p>A statistical analysis project exploring flight punctuality, efficiency, weather effects, and airline performance. Includes R Markdown source, full report, and presentation slides.</p>
         <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:8px;">
           <a class="btn" href="STAT%20167%20Project/Final%20Report.Rmd" target="_blank">Rmd File</a>
           <a class="btn" href="STAT%20167%20Project/Final%20Report.pdf" target="_blank">Report PDF</a>
           <a class="btn" href="STAT%20167%20Project/STAT167%20Final%20Project%20Presentation.pdf" target="_blank">Slides</a>
         </div>
+      </article>
+      <!-- Project 3 Placeholder -->
+      <article class="project-card">
+        <div class="thumb">Image/Preview</div>
+        <h3>Project Three</h3>
+        <p>Placeholder for future project.</p>
       </article>
     </div>
   </section>
@@ -167,7 +151,7 @@
             found = true;
           }
         });
-        if (!found && navLinks[0]) navLinks[0].classList.add('active');
+        if (!found && navLinks[0]) navLinks[0].add('active');
       };
       setInitial();
       window.addEventListener('resize', setInitial);

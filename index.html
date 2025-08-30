@@ -30,19 +30,22 @@
     section { padding: calc(var(--nav-h) + 40px) 20px 60px; min-height: 70vh; opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; scroll-margin-top: calc(var(--nav-h) + 20px); }
     section.visible { opacity: 1; transform: translateY(0); }
     #home { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 100vh; background: linear-gradient(135deg, var(--bg-1), var(--bg-2)); padding-top: calc(var(--nav-h) + 20px); }
-    #home h1 { font-size: 3rem; color: var(--accent); margin-bottom: 8px; }
-    #home p { color: #dcdde6; margin-bottom: 18px; font-size: 1.05rem; max-width: 760px; }
+    #home h1 { font-size: 3rem; color: var(--accent); margin-bottom: 10px; }
+    #home h2 { font-size: 1.3rem; color: #dcdde6; margin-bottom: 20px; }
     .btn { display: inline-block; background: var(--mid); color: #fff; padding: 10px 18px; border-radius: 8px; font-weight: 700; transition: background .22s, transform .12s; }
     .btn:hover { background: var(--bg-2); transform: translateY(-3px); }
-    #about { background: var(--bg-2); display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
-    .about-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-    .about-text p { color: #e7e7ee; line-height: 1.7; }
+    #about { background: var(--bg-2); }
+    .about-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .about-text p { color: #e7e7ee; line-height: 1.7; margin-bottom: 14px; }
+    ul.skills { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-top: 10px; }
+    ul.skills li { background: var(--bg-1); padding: 8px; border-radius: 6px; font-size: 0.95rem; color: var(--accent); }
     #projects { background: var(--bg-1); }
     .projects { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
     .project-card { background: var(--bg-2); padding: 18px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.45); transition: transform .28s ease, box-shadow .28s ease; display: flex; flex-direction: column; gap: 10px; min-height: 180px; }
-    .project-card .thumb { height: 120px; border-radius: 10px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05)); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.08); font-weight: 700; }
-    .project-card h3 { color: var(--accent); font-size: 1.05rem; margin-top: 6px; }
+    .project-card .thumb { height: 120px; border-radius: 10px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05)); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--accent); }
+    .project-card h3 { color: var(--accent); font-size: 1.1rem; margin-top: 6px; }
     .project-card p { color: #d7d7e0; font-size: .95rem; flex: 1; }
+    .project-card .btn { padding: 6px 12px; font-size: 0.85rem; }
     .project-card:hover { transform: translateY(-10px); box-shadow: 0 16px 36px rgba(146,144,195,0.28), 0 6px 16px rgba(0,0,0,0.55); }
     .project-card:hover h3 { color: var(--text); text-shadow: 0 0 14px rgba(146,144,195,0.15); }
     #contact { background: var(--bg-2); text-align: center; }
@@ -64,42 +67,48 @@
   </nav>
   <section id="home" class="visible">
     <h1>Rhea Verma</h1>
-    <p>Data Analytics & Information Systems — Senior at UC Riverside (Class of 2026), passionate about using data to drive insights and decisions.</p>
+    <h2>Data Analytics & Information Systems | UC Riverside ’26</h2>
+    <p>Turning raw data into actionable insights with R, SQL, Excel, and Power BI.</p>
     <a class="btn" href="#projects">View My Work</a>
   </section>
   <section id="about">
     <div class="about-inner">
       <div class="about-text">
         <h2 style="color:var(--accent); margin-bottom:12px;">About Me</h2>
-        <p>I am a senior at UC Riverside pursuing a B.S. in Statistics with a minor in Information Systems, graduating in 2026. I specialize in data analytics and building insights that can support decision-making across industries.</p>
-        <p style="margin-top:12px;">I am proficient in <strong>R</strong> and <strong>Excel</strong>, with working knowledge of <strong>Python</strong> and <strong>SQL</strong>. I am currently pursuing a <strong>Power BI certification</strong> and I’m comfortable using GitHub for version control and collaboration.</p>
-        <p style="margin-top:12px;">Beyond academics, I have contributed to student hackathons (Citrus & Cutie Hack), where I gained experience in teamwork, sponsor relations, and operations — skills that complement my technical analytics background.</p>
+        <p>I am a senior at UC Riverside pursuing a B.S. in Statistics with a minor in Information Systems, graduating in 2026. I focus on applying analytics and technology to solve real-world problems and support data-driven decision-making.</p>
+        <p>I am proficient in R and Excel, with working knowledge of Python and SQL. I am currently pursuing a Power BI certification and use GitHub for version control and collaboration. I’ve also contributed to Citrus & Cutie Hack, gaining experience in teamwork, sponsor relations, and operations that complement my analytics background.</p>
+        <h3 style="color:var(--accent); margin:20px 0 10px;">Core Skills</h3>
+        <ul class="skills">
+          <li>R</li>
+          <li>Excel</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>Power BI (in progress)</li>
+          <li>GitHub</li>
+        </ul>
       </div>
     </div>
   </section>
   <section id="projects">
     <h2 style="color:var(--accent); text-align:center;">Projects</h2>
     <div class="projects">
-      <!-- Project 1 Placeholder -->
       <article class="project-card">
-        <div class="thumb">Image/Preview</div>
+        <div class="thumb">🛠️</div>
         <h3>Project One</h3>
         <p>Placeholder for future project.</p>
       </article>
-      <!-- STAT 167 Project -->
       <article class="project-card">
         <div class="thumb">📊</div>
         <h3>STAT 167 Project — NYC Flight Analysis</h3>
-        <p>A statistical analysis project exploring flight punctuality, efficiency, weather effects, and airline performance. Includes R Markdown source, full report, and presentation slides.</p>
+        <p>Explored flight punctuality, efficiency, weather effects, and airline performance. Includes R Markdown, final report, and presentation slides.</p>
         <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:8px;">
-          <a class="btn" href="STAT%20167%20Project/Final%20Report.Rmd" target="_blank">Rmd File</a>
-          <a class="btn" href="STAT%20167%20Project/Final%20Report.pdf" target="_blank">Report PDF</a>
+          <a class="btn" href="STAT%20167%20Project/Final%20Report.Rmd" target="_blank">Rmd</a>
+          <a class="btn" href="STAT%20167%20Project/Final%20Report.pdf" target="_blank">Report</a>
           <a class="btn" href="STAT%20167%20Project/STAT167%20Final%20Project%20Presentation.pdf" target="_blank">Slides</a>
         </div>
       </article>
-      <!-- Project 3 Placeholder -->
       <article class="project-card">
-        <div class="thumb">Image/Preview</div>
+        <div class="thumb">📈</div>
         <h3>Project Three</h3>
         <p>Placeholder for future project.</p>
       </article>
@@ -108,11 +117,11 @@
   <section id="contact">
     <div class="contact-inner">
       <h2 style="color:var(--accent);">Contact Me</h2>
-      <p style="color:#d7d7e0;">Interested in working together or have a question? Drop a message below.</p>
-      <form onsubmit="event.preventDefault(); alert('This form is a demo. Connect it to your backend or email service.');">
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Your email" required>
-        <textarea rows="5" placeholder="Your message"></textarea>
+      <p style="color:#d7d7e0;">Interested in working together or have a question? Drop me a message below.</p>
+      <form action="https://formspree.io/f/mpwjpeee" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" rows="5" placeholder="Your message"></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
@@ -151,7 +160,7 @@
             found = true;
           }
         });
-        if (!found && navLinks[0]) navLinks[0].add('active');
+        if (!found && navLinks[0]) navLinks[0].classList.add('active');
       };
       setInitial();
       window.addEventListener('resize', setInitial);
